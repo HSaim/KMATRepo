@@ -29,15 +29,20 @@
         //out.println("\nClass.forName executed" + "<br>");
         //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kmat",  mySQLuser, mySQLpwd) ;
         //out.println("\nConnected to DB" + "<br>");
-        String email = request.getParameter("email");
-        String firstname = request.getParameter("firstname");
-        String lastname = request.getParameter("lastname");
+        String userName = request.getParameter("user_name");
+        String priEmail = request.getParameter("p_email");
+        String secEmail = request.getParameter("s_email");
+        String firstName = request.getParameter("firstname");
+        String lastName = request.getParameter("lastname");
         String password = request.getParameter("password");
        // out.println("Password: " + password);
-        String address1 = request.getParameter("address");
-        String workphone = request.getParameter("contactNumber");
+        String postalAddress = request.getParameter("postal_address");
+        String perAddress = request.getParameter("per_address");
+        String workPhone = request.getParameter("w_phone");
+        String homePhone = request.getParameter("h_phone");
+        String mobPhone = request.getParameter("m_phone");
         
-        if(email!="" && password!="" && firstname!="" && lastname!="" ) {
+        if(userName!="" && password!="" && firstName!="" && lastName!="" && priEmail!="" ) {
            
                 connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/kmat",  mySQLuser, mySQLpwd);
                 
@@ -45,7 +50,7 @@
                 
                
                 pstatement1 = connection.prepareStatement(insertQuery1);
-                pstatement1.setString(1, email);
+                pstatement1.setString(1, userName);
                 pstatement1.setString(2, password);
                 user_tbl_InsertQuery = pstatement1.executeUpdate();
                 if (user_tbl_InsertQuery != 0) {
@@ -54,7 +59,7 @@
                 
                 String selectQuery = "Select user_id from user_tbl where username = ?";
                 pstatement2 = connection.prepareStatement(selectQuery);
-                pstatement2.setString(1, email);
+                pstatement2.setString(1, userName);
                 ResultSet rs = pstatement2.executeQuery();
                 if(rs.next())  {  
                     userId = rs.getInt("user_id");
@@ -63,14 +68,19 @@
                 
                 String insertQuery2 = "INSERT INTO user_details_tbl(user_idfk, first_name, last_name, email1, email2, address1,"
                         + " address2, work_phone, mobile_phone, home_phone, details, create_dt, update_dt) "
-                        + "VALUES ( ?, ?, ?, 'email1', 'email2', ?, 'address2', ?,'mobile_phone', 'home_phone', 'details', NOW(), NOW())";
+                        + "VALUES ( ?, ?, ?, ?, ?, ?, ?, ?,?, ?, 'details', NOW(), NOW())";
                
                 pstatement3 = connection.prepareStatement(insertQuery2);
                 pstatement3.setInt(1, userId);
-                pstatement3.setString(2, firstname);
-                pstatement3.setString(3, lastname);
-                pstatement3.setString(4, address1);
-                pstatement3.setString(5, workphone);
+                pstatement3.setString(2, firstName);
+                pstatement3.setString(3, lastName);
+                pstatement3.setString(4, priEmail);
+                pstatement3.setString(5, secEmail);
+                pstatement3.setString(6, postalAddress);
+                pstatement3.setString(7, perAddress);
+                pstatement3.setString(8, workPhone);
+                pstatement3.setString(10, homePhone);
+                 pstatement3.setString(9, mobPhone);
                 user_details_tbl_InsertQuery = pstatement3.executeUpdate();
                // pstatement.setString(4, full_name);
                 //pstatement.setString(5, ulevel);

@@ -1,7 +1,7 @@
 <%-- 
     Document   : AddUser
     Created on : Aug 2, 2016, 11:38:08 AM
-    Author     : Saim
+    Author     : Habiba Saim
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,6 +13,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <title>Add User</title>
     </head>
+    
     <body>
         <%-- Menubar starts --%>
         <jsp:include page="includes/menubarUser.jsp" />

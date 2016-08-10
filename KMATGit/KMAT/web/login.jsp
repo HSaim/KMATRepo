@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/mainStyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <title>Login</title>
+        <title>Sign In</title>
     </head>
     
     <body>
@@ -26,55 +26,56 @@
        <%-- Slider ends --%>
        
        <%-- Login section starts --%>
-       <form method="post" action="ValidateLogin.jsp">
-       <div id="section" >
-            <div  id ="login">           
-                <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-                    <div class="panel panel-info" >
-                        <div class="panel-heading">
-                            <div class="panel-title">Sign In</div>
-                            <div style="float:right; font-size: 95%; position: relative; top:-10px"><a href="#">Forgot Password?</a></div>
-                        </div>     
-
-                        <div style="padding-top:30px" class="panel-body" >
-                            <div style="display:none" ></div>
-                            <div style="margin-bottom: 25px" class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input id="login-username" type="text" name="username" placeholder="Username or Email" required>                                        
-                            </div>
-
-                            <div style="margin-bottom: 25px" class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input id="login-password" type="password" name="password" placeholder="Password" required>
-                            </div>
-
-                            <div class="input-group">
-                                <div class="checkbox">
-                                  <label>
-                                    <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                                  </label>
-                                </div>
-                            </div>
-
-                            <!-- Button 
-                            <button name="loginform"   onclick="loggedin()"><i class="icon-hand-right"></i> Login</button> -->
+       <div  id ="Login" align="center">
+            <form method="post" action="ValidateLogin.jsp">    
+           
+                <table style="width:auto"align="center">
+                    <tr>
+                        <th colspan="2">
+                            Sign in
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width:auto"align="right">
+                            Username:
+                        </td>
+                        <td style="width:auto"align="left">
+                            <input id="login-username" type="text" name="username" placeholder="Username or Email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:auto"align="right">
+                            Password:
+                        </td>
+                        <td style="width:auto"align="left">     
+                            <input id="login-password" type="password" name="password" placeholder="Password" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="width:auto"align="right">
+                            <a href="#">Forgot Password?</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="width:auto"align="left">
+                            <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="width:auto"align="center">
+                            <!--<button name="loginform"   onclick="loggedin()">Login</button>-->
                             <input type="submit" value="Login" />
-                            <div class="form-group">
-                                <div class="col-md-12 control">
-                                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:95%" >
-                                        Don't have an account? 
-                                        <a onclick="adduser()">
-                                            Sign Up Here!
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>    
-                         </div>                     
-                    </div>  
-                </div>
-            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="width:auto"align="center">
+                            No account? <a href = "SignUpForm.jsp">Sign Up Here!</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
-           </form>
+        
         <%-- Login section ends --%>
         
         <%-- adds Top Slider, login functions --%>
