@@ -84,11 +84,8 @@
         <jsp:include page="includes/js.jsp" />
 
  
-        <%-- Footer starts --%>
-        <div id="footer">
-             Copyright © Rice Lab, LUMS, Lahore, Pakistan.
-        </div>
-         <%-- Footer ends --%>
+        <%-- Includes footer --%>
+        <jsp:include page="includes/footer.jsp" />
          
     </body>
 </html>

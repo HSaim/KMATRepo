@@ -155,3 +155,8 @@ display:none;
 #add-user{
     display: block;
 }
+
+.required{
+    color: red;
+    font-size:15px;
+}

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : validate
+    Document   : validateLogin
     Created on : Jul 29, 2016, 10:18:59 AM
     Author     : Habiba Saim
 --%>

@@ -27,7 +27,7 @@
        
        <%-- Login section starts --%>
        <div  id ="Login" align="center">
-            <form method="post" action="ValidateLogin.jsp">    
+            <form method="post" action="ValidateLogin.jsp" >    
            
                 <table style="width:auto"align="center">
                     <tr>
@@ -69,7 +69,7 @@
                     </tr>
                     <tr>
                         <td colspan="2" style="width:auto"align="center">
-                            No account? <a href = "SignUpForm.jsp">Sign Up Here!</a>
+                            No account? <a href = "SignUp.jsp">Sign Up Here!</a>
                         </td>
                     </tr>
                 </table>
@@ -80,13 +80,9 @@
         
         <%-- adds Top Slider, login functions --%>
         <jsp:include page="includes/js.jsp" />
-
  
-        <%-- Footer starts --%>
-        <div id="footer">
-             Copyright © Rice Lab, LUMS, Lahore, Pakistan.
-        </div>
-         <%-- Footer ends --%>
+        <%-- Includes footer --%>
+        <jsp:include page="includes/footer.jsp" />
          
     </body>
 </html>

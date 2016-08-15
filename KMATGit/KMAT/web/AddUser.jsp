@@ -28,83 +28,29 @@
         <jsp:include page="includes/sidebarUserMenu.jsp" />
         <%-- Sidebar Menu Ends --%>
         
-        <%-- Add User Block Starts --%>
-        
-            <div id="section" >
-             <%--<div id="add-user"  class="hidden" style="align:center"> --%>
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <div class="panel-title" style="float:right; font-size: 130%;  position: relative; top:-10px">ADD USER</div>
-                    </div> 
-                    
-                    <div class="panel-body" >
-                        <form method="post" action="InsertUser.jsp">
-                            <div class="form-group">
-                                <label for="email" class="col-md-3 control-label">Email</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="email" placeholder="Email Address">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="firstname" class="col-md-3 control-label">First Name</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="firstname" placeholder="First Name">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="lastname" class="col-md-3 control-label">Last Name</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="lastname" placeholder="Last Name">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password" class="col-md-3 control-label">Password</label>
-                                <div class="col-md-9">
-                                    <input type="password" class="form-control" name="password" placeholder="Password">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="address" class="col-md-3 control-label">Address</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="address" placeholder="Address">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="contactNumber" class="col-md-3 control-label">Contact Number</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="contactNumber" placeholder="Contact Number">
-                                </div>
-                            </div>
-
-                            <div class="form-group">                                        
-                                <div class="col-md-offset-3 col-md-9">
-                                    <!--
-                                    <button name="add-user-form" onclick="addeduser()"><i class="icon-hand-right"></i> Add User</button> 
-                                    -->
-                                    <input type="submit" value="Add User" />
-                                </div>
-                            </div>
-
-                        </form>
-                     </div>
-                </div> 
-
-     <%--</div> --%>
-            </div>
-       
-         <%-- Add User Block Ends --%>
+        <%-- Add User Block Starts --%>      
+           
+        <div  id ="Login" align="center">
+            <form method="post" action="InsertUser.jsp">
+                <input type="hidden" name="hidden" value="AddUser"> <!-- For distinction of SignUp and AddUser pages-->
+                <table style="width:auto"align="center">
+                    <tr>
+                        <th colspan="2">
+                            Add User
+                        </th>
+                    </tr>
+                    <%-- Includes Sign Up Form --%>
+                    <jsp:include page="includes/signupForm.jsp" />
+                </table>
+                
+            </form>
+        </div>       
+        <%-- Add User Block Ends --%>
        <%-- adds Top Slider, login functions --%>
         <jsp:include page="includes/js.jsp" /> 
         
-        <%-- Footer starts --%>
-        <div id="footer">
-             Copyright © Rice Lab, LUMS, Lahore, Pakistan.
-        </div>
-        <%-- Footer ends --%>
+        <%-- Includes footer --%>
+        <jsp:include page="includes/footer.jsp" />
+        
     </body>
 </html>

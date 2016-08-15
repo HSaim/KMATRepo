@@ -11,13 +11,11 @@
 <%@ page import="java.sql.DriverManager" %>
 
 <%
-    try{
+  
     	String mySQLuser = "root";
     	String mySQLpwd = "century_77";
         Class.forName("com.mysql.jdbc.Driver").newInstance();
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kmat",  mySQLuser, mySQLpwd) ;
-        }
-    catch(Exception e){       
-         out.println("Something went wrong !! Connection to Kmat DB is not established");       
-    }
+        //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kmat",  mySQLuser, mySQLpwd) ;
+        
+    
   %>

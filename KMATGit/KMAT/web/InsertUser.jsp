@@ -9,11 +9,18 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
 
-       
+ <!DOCTYPE html>
+<html>   
+    <head>
+        
+    
+    </head>
+    <body>
 <%
     
     try {
         Connection connection = null;
+        PreparedStatement pstatement = null;
         PreparedStatement pstatement1 = null;
         PreparedStatement pstatement2 = null;
         PreparedStatement pstatement3 = null;
@@ -24,7 +31,7 @@
         
         String mySQLuser = "root";
         String mySQLpwd = "century_77";
-        out.println("Before Class.forName() <br>");
+        //out.println("Before Class.forName() <br>");
         //Class.forName("com.mysql.jdbc.Driver").newInstance();
         //out.println("\nClass.forName executed" + "<br>");
         //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kmat",  mySQLuser, mySQLpwd) ;
@@ -41,31 +48,52 @@
         String workPhone = request.getParameter("w_phone");
         String homePhone = request.getParameter("h_phone");
         String mobPhone = request.getParameter("m_phone");
+        String hidden = request.getParameter("hidden");
         
         if(userName!="" && password!="" && firstName!="" && lastName!="" && priEmail!="" ) {
            
                 connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/kmat",  mySQLuser, mySQLpwd);
                 
-                String insertQuery1 = "INSERT INTO user_tbl(username, password, create_dt, update_dt) VALUES ( ?, ?, NOW(), NOW())";
+                //Check if the user name already exists
+                String duplicatesValidationQuery = "Select username from user_tbl where username = ?";
+                pstatement = connection.prepareStatement(duplicatesValidationQuery);
+                pstatement.setString(1, userName);
+                ResultSet rs1 = pstatement.executeQuery();
+                if(rs1.next())  { 
+                    if (hidden.equalsIgnoreCase("adduser")){
+                        out.println("<script type=\"text/javascript\">");
+                        out.println("alert('User name already exists, select a new one');");
+                        out.println("location='AddUser.jsp';");
+                        out.println("</script>");
+                        //response.sendRedirect("SignUp.jsp");
+                    }
+                    else if(hidden.equalsIgnoreCase("signup")){
+                        out.println("<script type=\"text/javascript\">");
+                        out.println("alert('User name already exists, select a new one');");
+                        out.println("location='SignUp.jsp';");
+                        out.println("</script>");
+                    }
+                }
+                /////////////////////////////////////////
                 
-               
+                //Insertion in 'user_tbl' table
+                String insertQuery1 = "INSERT INTO user_tbl(username, password, create_dt, update_dt) VALUES ( ?, ?, NOW(), NOW())";
                 pstatement1 = connection.prepareStatement(insertQuery1);
                 pstatement1.setString(1, userName);
                 pstatement1.setString(2, password);
                 user_tbl_InsertQuery = pstatement1.executeUpdate();
-                if (user_tbl_InsertQuery != 0) {
-                    out.println("1 row inserted successfully in user_tbl");
-                    }
                 
+                //Retrieval of user id of recently entered user in 'user_tbl'table
                 String selectQuery = "Select user_id from user_tbl where username = ?";
                 pstatement2 = connection.prepareStatement(selectQuery);
                 pstatement2.setString(1, userName);
-                ResultSet rs = pstatement2.executeQuery();
-                if(rs.next())  {  
-                    userId = rs.getInt("user_id");
-                    out.println("Id: " + userId);
+                ResultSet rs2 = pstatement2.executeQuery();
+                if(rs2.next())  {  
+                    userId = rs2.getInt("user_id");
+                   // out.println("Id: " + userId);
                 }
                 
+                //Insertion in 'user_details_tbl' table
                 String insertQuery2 = "INSERT INTO user_details_tbl(user_idfk, first_name, last_name, email1, email2, address1,"
                         + " address2, work_phone, mobile_phone, home_phone, details, create_dt, update_dt) "
                         + "VALUES ( ?, ?, ?, ?, ?, ?, ?, ?,?, ?, 'details', NOW(), NOW())";
@@ -80,19 +108,59 @@
                 pstatement3.setString(7, perAddress);
                 pstatement3.setString(8, workPhone);
                 pstatement3.setString(10, homePhone);
-                 pstatement3.setString(9, mobPhone);
+                pstatement3.setString(9, mobPhone);
+                
                 user_details_tbl_InsertQuery = pstatement3.executeUpdate();
-               // pstatement.setString(4, full_name);
-                //pstatement.setString(5, ulevel);
-                //pstatement.setString(6, team_id);
-                
-                
-                if (user_details_tbl_InsertQuery != 0) {
-                    out.println("1 row inserted successfully in user_details_tbl");
+               
+                if (user_tbl_InsertQuery != 0 && user_details_tbl_InsertQuery != 0) {
+                    if (hidden.equalsIgnoreCase("signup")){
+                        out.println("<script type=\"text/javascript\">");
+                        out.println("alert('One record inserted successfully');");
+                        out.println("location='login.jsp';");
+                        out.println("</script>");
+                    %>
+                        <!--alert("Congratulations '"+ firstName + "! Your account is created" );
+                        var r=confirm("Congratulations '"+ firstName + "! Your account is created");-->
+                        <!--
+                        <script type="text/javascript">
+
+                            //function alertName(){
+                                alert(firstName + "! Your account is created");                       
+                            //}
+                            //alert("Congratulations '"+ firstName + "! Your account is created" );
+                            
+                            window.location.href = "login.jsp";
+                            // alertName();
+                        </script> --> 
+                    <%
+                    }  
+                    else if(hidden.equalsIgnoreCase("adduser")){
+                   
+                        out.println("<script type=\"text/javascript\">");
+                        out.println("alert('One record inserted successfully');");
+                        out.println("location='UserHome.jsp';");
+                        out.println("</script>");
+                         %>
+                        <!--
+                        <script type="text/javascript">
+
+                            function alertName(){
+                                alert(firstName + " is added");                       
+                            }
+                            //alert("Congratulations '"+ firstName + "! Your account is created" );
+                            window.location.href = "UserHome.jsp";
+                            alertName();
+                        </script>
+                        -->
+                    <%
                     }
                 }
-    }
+            }
+        }
             catch(Exception e){       
                 out.println("Error: " + e.getMessage());       
             }
  %>
+ <script type="text/javascript"> window.onload = alertName; </script>
+ </body>
+</html>
