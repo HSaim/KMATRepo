@@ -161,6 +161,6 @@
                 out.println("Error: " + e.getMessage());       
             }
  %>
- <script type="text/javascript"> window.onload = alertName; </script>
+
  </body>
 </html>

@@ -14,7 +14,7 @@
         <title>Sign In</title>
     </head>
     
-    <body>
+    <body class = "login">
        <%-- Menubar starts --%>
        <jsp:include page="includes/menubar.jsp" />
        <%-- Menubar Ends --%>

@@ -1,20 +1,20 @@
 <%-- 
-    Document   : newjsp
-    Created on : Jul 29, 2016, 11:52:55 AM
+    Document   : Map
+    Created on : Aug 16, 2016, 10:44:52 AM
     Author     : Habiba Saim
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/mainStyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <title>KMAT User</title>
+        <title>Map</title>
     </head>
-    <body class = "home">
-       <%-- Menubar starts --%>
+    <body class = "map">
+         <%-- Menubar starts --%>
        <jsp:include page="includes/menubarUser.jsp" />
        <%-- Menubar Ends --%>
        
@@ -23,8 +23,8 @@
             <jsp:include page="includes/topSliderImages.jsp" />
        </div>
        <%-- Slider ends --%>
-       
-       <%-- Sidebar Menu Starts --%>
+       <h1>Map Page is under construction</h1>
+       <%-- Sidebar Menu Starts 
        <jsp:include page="includes/sidebarUserMenu.jsp" />       
        <%-- Sidebar Menu Ends --%>
         
@@ -36,3 +36,4 @@
         
     </body>
 </html>
+

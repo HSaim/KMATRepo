@@ -52,15 +52,7 @@
                             Create your KMAT Account
                         </th>
                     </tr>
-                    <!--
-                    <tr>
-        <td align="right">
-             User Name <span class="required">*</span>                           
-        </td>
-        <td align="left">
-            <input type="text" name="user_name" placeholder="User Name" >
-        </td>
-    </tr> -->
+                    
                     <%-- Includes Sign Up Form --%>
                     <jsp:include page="includes/signupForm.jsp" />
                 </table>  

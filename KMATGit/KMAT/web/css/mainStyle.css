@@ -147,8 +147,9 @@ display:none;
     display: block;
 }
 
-.error-color{
+p.error-message{
     color:  red;
+    font-size: 20px;
     
 }
 
@@ -159,4 +160,22 @@ display:none;
 .required{
     color: red;
     font-size:15px;
+}
+
+
+/*Current page menu highlight ends*/
+
+#header li > a:hover{
+        color: #8B0000;
+}
+
+
+body.map li.map > a,
+body.home li.home > a,
+body.login li.login >a,
+body.about li.about > a,
+body.contact li.contact >a,
+body.news li.news >a
+{
+    color: #FFA500; 
 }

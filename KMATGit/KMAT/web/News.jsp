@@ -1,6 +1,6 @@
 <%-- 
-    Document   : newjsp
-    Created on : Jul 29, 2016, 11:52:55 AM
+    Document   : News
+    Created on : Aug 16, 2016, 10:40:03 AM
     Author     : Habiba Saim
 --%>
 
@@ -11,10 +11,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/mainStyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <title>KMAT User</title>
+        <title>News</title>
     </head>
-    <body class = "home">
-       <%-- Menubar starts --%>
+    <body class = "news">
+         <%-- Menubar starts --%>
        <jsp:include page="includes/menubarUser.jsp" />
        <%-- Menubar Ends --%>
        
@@ -23,8 +23,8 @@
             <jsp:include page="includes/topSliderImages.jsp" />
        </div>
        <%-- Slider ends --%>
-       
-       <%-- Sidebar Menu Starts --%>
+       <h1>News Page is under construction</h1>
+       <%-- Sidebar Menu Starts 
        <jsp:include page="includes/sidebarUserMenu.jsp" />       
        <%-- Sidebar Menu Ends --%>
         

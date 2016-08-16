@@ -14,7 +14,7 @@
         <title>KMAT-Home</title>
         
     </head>
-    <body>
+    <body class = "home">
        <%-- Menubar starts --%>
        <jsp:include page="includes/menubar.jsp" />
        <%-- Menubar Ends --%>

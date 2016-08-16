@@ -14,16 +14,12 @@
         try{
             String mySQLuser = "root";
             String mySQLpwd = "century_77";
-            //out.println("Before Class.forName() <br>");
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            //out.println("\nClass.forName executed" + "<br>");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kmat",  mySQLuser, mySQLpwd) ;
-            //out.println("\nConnected to DB" + "<br>");
-            String user = request.getParameter("username");
-            //out.println("\nUser Name: "+ username);
-            //out.println("<br>");
+            
+            Class.forName("com.mysql.jdbc.Driver").newInstance();          
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kmat",  mySQLuser, mySQLpwd) ;           
+            String user = request.getParameter("username");           
             String pwd = request.getParameter("password");
-            //out.println("\nPassword: " + pwd + "<br>");
+           
             
             PreparedStatement pst = conn.prepareStatement("Select username, password from user_tbl where username=? and password=?");
             pst.setString(1, user);
@@ -33,7 +29,7 @@
                //out.println("Valid login credentials"); 
                session.setAttribute("userName", user);
                %>
-                <form method="post" action="menubarUser.jsp">    
+                <form method="post" action="includes/menubarUser.jsp">    
                      <input type="hidden" name="userName" value="${user}"> 
                 </form>
                 <script type="text/javascript">
