@@ -1,21 +1,21 @@
 <%-- 
-    Document   : AboutUs
-    Created on : Aug 16, 2016, 10:44:04 AM
+    Document   : UserContactUs
+    Created on : Aug 17, 2016, 10:18:19 AM
     Author     : Saim
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-     <head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/mainStyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <title>About Us</title>
+        <title>Contact Us</title>
     </head>
-    <body class ="about">
+    <body class = "contact">
          <%-- Menubar starts --%>
-       <jsp:include page="includes/menubar.jsp" />
+       <jsp:include page="includes/menubarUser.jsp" />
        <%-- Menubar Ends --%>
        
        <%-- Slider starts --%>
@@ -23,7 +23,7 @@
             <jsp:include page="includes/topSliderImages.jsp" />
        </div>
        <%-- Slider ends --%>
-       <h1>About Us Page is under construction</h1>
+       <h1>User's Contact Us Page is under construction</h1>
        <%-- Sidebar Menu Starts 
        <jsp:include page="includes/sidebarUserMenu.jsp" />       
        <%-- Sidebar Menu Ends --%>

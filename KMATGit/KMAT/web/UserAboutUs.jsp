@@ -1,6 +1,6 @@
 <%-- 
-    Document   : AboutUs
-    Created on : Aug 16, 2016, 10:44:04 AM
+    Document   : UserAboutUs
+    Created on : Aug 17, 2016, 10:16:24 AM
     Author     : Saim
 --%>
 
@@ -15,7 +15,7 @@
     </head>
     <body class ="about">
          <%-- Menubar starts --%>
-       <jsp:include page="includes/menubar.jsp" />
+       <jsp:include page="includes/menubarUser.jsp" />
        <%-- Menubar Ends --%>
        
        <%-- Slider starts --%>
@@ -23,7 +23,7 @@
             <jsp:include page="includes/topSliderImages.jsp" />
        </div>
        <%-- Slider ends --%>
-       <h1>About Us Page is under construction</h1>
+       <h1>User's About Us Page is under construction</h1>
        <%-- Sidebar Menu Starts 
        <jsp:include page="includes/sidebarUserMenu.jsp" />       
        <%-- Sidebar Menu Ends --%>

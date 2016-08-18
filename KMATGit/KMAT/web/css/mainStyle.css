@@ -121,9 +121,7 @@ div.log-in{
 #delmsg{
 display:none;
 }
-#to-add{
-    display:none;
-}
+
 #tool-added{
     display:none;
 }
@@ -143,7 +141,7 @@ display:none;
    
 }
 
-#login{
+#Login{
     display: block;
 }
 

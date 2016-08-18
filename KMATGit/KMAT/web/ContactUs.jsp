@@ -15,7 +15,7 @@
     </head>
     <body class = "contact">
          <%-- Menubar starts --%>
-       <jsp:include page="includes/menubarUser.jsp" />
+       <jsp:include page="includes/menubar.jsp" />
        <%-- Menubar Ends --%>
        
        <%-- Slider starts --%>

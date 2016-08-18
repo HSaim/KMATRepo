@@ -14,10 +14,10 @@
 <div id = "header">
     <ul>
      <li class = "home"><a  href="UserHome.jsp">Home</a></li>
-      <li class = "news"><a href="News.jsp">News</a></li>
-      <li class = "contact"><a href="ContactUs.jsp">Contact</a></li>
-      <li class = "about"><a href="AboutUs.jsp">About</a></li>
-      <li class = "map"><a href="Map.jsp">Site Map</a></li>    
+      <li class = "news"><a href="UserNews.jsp">News</a></li>
+      <li class = "contact"><a href="UserContactUs.jsp">Contact</a></li>
+      <li class = "about"><a href="UserAboutUs.jsp">About</a></li>
+      <li class = "map"><a href="UserMap.jsp">Site Map</a></li>    
       <li><a href = "login.jsp">Logout</a></li>
       
       <%-- Code to display hello message with user name - Starts--%> 

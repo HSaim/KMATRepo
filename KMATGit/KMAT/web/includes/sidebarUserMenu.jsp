@@ -17,7 +17,12 @@
          <li><a>Process</a></li><br>
          <li><a>Composition</a></li><br>
          <li><a>Concept Map</a></li><br>
-         <li><a onclick="addresource()">Resources</a></li><br>
+         <li>
+             <a href = "AddResource.jsp">
+                 Resources
+             </a>
+         </li>
+         <br>
          <li><a onclick = "addtool()">Tools</a></li><br>
          <li><a>Lists</a></li><br>
 

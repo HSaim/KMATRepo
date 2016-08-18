@@ -6,5 +6,5 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <script type="text/javascript" src="javascripts/topSlider.js"></script>
-<script type="text/javascript" src="javascripts/login.js"></script>
+<!--<script type="text/javascript" src="javascripts/login.js"></script> -->
 <script type="text/javascript" src="javascripts/inserUserConfirmation.js"></script>
