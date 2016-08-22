@@ -25,12 +25,12 @@
             pst.setString(1, user);
             pst.setString(2, pwd);
             ResultSet rs = pst.executeQuery();                        
-            if(rs.next())  {         
+            if(rs.next())  {      //User exists   
                //out.println("Valid login credentials"); 
                session.setAttribute("userName", user);
                %>
-                <form method="post" action="includes/menubarUser.jsp">    
-                     <input type="hidden" name="userName" value="${user}"> 
+                <form method="post" action="menubarUser.jsp">    
+                    <input type="hidden" name="hidden" value="user-name">  
                 </form>
                 <script type="text/javascript">
                     window.location.href = "UserHome.jsp";
