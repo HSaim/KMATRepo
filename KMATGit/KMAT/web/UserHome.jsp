@@ -1,7 +1,9 @@
 <%-- 
-    Document   : newjsp
+    Document   : UserHome
     Created on : Jul 29, 2016, 11:52:55 AM
     Author     : Habiba Saim
+
+    Logged in user's home page
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,7 +15,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <title>KMAT User</title>
     </head>
-    <body class = "home" onload="loading();">
+    <body class = "home"> <!-- onload="loading();"> -->
        <%--
            String user = request.getParameter("hidden");
            out.println("user name: " + user);
@@ -68,8 +70,9 @@
         <%-- adds Top Slider, login functions --%>
         <jsp:include page="includes/js.jsp" /> 
         
-        <%-- Includes footer --%>
+        <%-- Includes footer
         <jsp:include page="includes/footer.jsp" />
         
     </body>
 </html>
+ --%>

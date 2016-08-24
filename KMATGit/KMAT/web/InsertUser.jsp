@@ -2,6 +2,7 @@
     Document   : InsertUser
     Created on : Aug 2, 2016, 3:30:10 PM
     Author     : Habiba Saim
+    Inserts a new user in the DB
 --%>
 
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
