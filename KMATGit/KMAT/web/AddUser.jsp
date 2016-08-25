@@ -2,6 +2,8 @@
     Document   : AddUser
     Created on : Aug 2, 2016, 11:38:08 AM
     Author     : Habiba Saim
+
+    Signup Form
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -49,8 +51,9 @@
        <%-- adds Top Slider, login functions --%>
         <jsp:include page="includes/js.jsp" /> 
         
-        <%-- Includes footer --%>
+        <%-- Includes footer 
         <jsp:include page="includes/footer.jsp" />
         
     </body>
 </html>
+--%>

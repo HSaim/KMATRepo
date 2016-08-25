@@ -9,8 +9,9 @@ and open the template in the editor.
 */
 
 body{
-    background-image:url("../images/11.png");
-    background-repeat: repeat;
+    background-image:url("../images/background3.jpg");
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
    /* background-repeat: repeat-y;*/
 }
 
@@ -160,14 +161,11 @@ p.error-message{
     font-size:15px;
 }
 
-
-/*Current page menu highlight ends*/
-
 #header li > a:hover{
         color: #8B0000;
 }
 
-
+/* Changes color of active menu */
 body.map li.map > a,
 body.home li.home > a,
 body.login li.login >a,

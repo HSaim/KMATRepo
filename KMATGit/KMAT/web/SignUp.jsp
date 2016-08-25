@@ -64,9 +64,10 @@
         <%-- adds Top Slider, login functions --%>
         <jsp:include page="includes/js.jsp" /> 
       
-        <%-- Includes footer --%>
+        <%-- Includes footer 
         <jsp:include page="includes/footer.jsp" />
         
     </body>
     
 </html>
+--%>
